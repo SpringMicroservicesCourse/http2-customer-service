@@ -36,6 +36,9 @@ public class CustomerServiceApplication {
 				.run(args);
 	}
 
+	/**
+	 * okhttp 4.12.0 兼容考量，使用Spring Boot 3.2.5版本
+	 */
 	@Bean
 	public ClientHttpRequestFactory requestFactory() {
 		OkHttpClient okHttpClient = null;
@@ -57,6 +60,9 @@ public class CustomerServiceApplication {
 		return new OkHttp3ClientHttpRequestFactory(okHttpClient);
 	}
 
+	/**
+	 * okhttp 4.12.0 兼容考量，使用Spring Boot 3.2.5版本
+	 */
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder
